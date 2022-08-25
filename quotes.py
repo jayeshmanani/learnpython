@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from cred import heroku_db_cred
+import os
 
+# get db url from the heroku database created as resource add on in heroku server
+DB_URI = os.environ.get('DATABASE_URL')
 app = Flask(__name__)
 
 #Local DB
@@ -9,7 +11,7 @@ app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql+psycopg2://postgres:{password}@localhost/quotes'
 
 # Heroku DB
-app.config['SQLALCHEMY_DATABASE_URI'] = heroku_db_cred
+app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
