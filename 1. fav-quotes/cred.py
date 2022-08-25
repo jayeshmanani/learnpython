@@ -1,0 +1,1 @@
+heroku_db_cred = 'postgres://pcnsalgmvscijn:a55cb49760b67f63640e0cba13ea1d4dc173ff8aa46a76826255e9a2f7b0f9d9@ec2-52-30-75-37.eu-west-1.compute.amazonaws.com:5432/d568sggd4shpt4'
