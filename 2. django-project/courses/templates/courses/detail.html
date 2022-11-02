@@ -84,14 +84,12 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Egrasps Learning Solutions</h1>
-        <p class="lead text-muted">Welcome to Egrasps Learning Solutions, This project is for learning DJango.</p>
+        <h1 class="fw-light">Course Details</h1>
+        <p class="lead text-muted">{{ course.summary }}.</p>
+        <img src="{{ course.image.url }}" height="300" />
         <p>
-          <a href="mailto:egrasps@gmail.com" class="btn btn-primary my-2">Email Us</a>
-          <a href="https://jayeshmanani.github.io" target="_blank" class="btn btn-info my-2">My Portfolio Page</a>
-          <a href="https://www.linkedin.com/in/mananijayesh" target="_blank" class="btn btn-secondary my-2">My LinkedIn Profile</a>
+            <a href="{% url 'index' %}" class="btn btn-primary my-2"> Back </a>
         </p>
-        <img src="{% static 'egrasps_logo.png' %}" height="300">
       </div>
     </div>
   </section>
@@ -105,9 +103,8 @@
 
         <div class="col">
           <div class="card shadow-sm">
-            <a href="{% url 'detail' course.id %}" >
-              <img class="card-img-top" src="{{course.image.url}}" height="300">
-            </a>
+            <img class="card-img-top" src="{{course.image.url}}" height="300">
+
             <div class="card-body">
               <p class="card-text"> {{course.summary}} </p>
               
